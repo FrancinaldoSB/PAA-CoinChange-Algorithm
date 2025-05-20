@@ -21,7 +21,7 @@ def algoritmo_guloso(moedas, valor):
     return total_moedas if valor == 0 else -1
 
 resultado_guloso = algoritmo_guloso(lista, valor)
-print(f"Resultado Guloso: {resultado_guloso}")
+# print(f"Resultado Guloso: {resultado_guloso}")
 
 # Algoritmo Backtracking
 # O algoritmo de backtracking tenta todas as combinações possíveis de moedas para encontrar a solução ótima.
@@ -37,4 +37,4 @@ def algoritmo_backtracking(moedas, valor, total_moedas=0):
     return min(usar_moeda, nao_usar_moeda)
 
 resultado_backtracking = algoritmo_backtracking(lista, valor)
-print(f"Resultado Backtracking: {resultado_backtracking if resultado_backtracking != float('inf') else -1}")
+# print(f"Resultado Backtracking: {resultado_backtracking if resultado_backtracking != float('inf') else -1}")
