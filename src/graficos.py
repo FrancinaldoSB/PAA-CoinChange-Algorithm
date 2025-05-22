@@ -16,7 +16,7 @@ import os
 import tracemalloc
 
 MOEDAS = [i for i in range(1,16)]
-MOEDAS2 = [i for i in range(1,46)]
+MOEDAS2 = [i for i in range(1,76)]
 VALOR = 10
 
 # --------------------------------------------------------------------------------------------------- #
@@ -40,6 +40,7 @@ def memoria_guloso(lista_moedas, valor):
     tracemalloc.start()
     _ = algoritmo_guloso(lista_moedas, valor)
     mem_atual, mem_pico = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
     
     return mem_atual, mem_pico
 
@@ -58,6 +59,7 @@ def memoria_backtracking(lista_moedas, valor, total_moedas=0):
     tracemalloc.start()
     _ = algoritmo_backtracking(lista_moedas, valor, total_moedas)
     mem_atual, mem_pico = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
     
     return mem_atual, mem_pico
 
