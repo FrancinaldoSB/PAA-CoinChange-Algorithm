@@ -65,8 +65,11 @@ def memoria_backtracking(lista_moedas, valor, total_moedas=0):
 
 def plotar_tempos(tempos, cenario):    
     plt.figure(figsize=(10,6))
+    
+    paleta = [sns.color_palette("pastel")[0], sns.color_palette("pastel")[4]]
+    
     plt.plot(tempos[0], label='Algoritmo Guloso', marker='o', linestyle='--', color='black')
-    plt.plot(tempos[1], label='Backtracking', marker='s', linestyle='--', color='green')
+    plt.plot(tempos[1], label='Backtracking', marker='s', linestyle='--', color=paleta[0])
     
     plt.title(f"Comparacao de tempo de execução para o {'primeiro' if cenario == 1 else 'segundo'} cenário")
     plt.xlabel('Número da execução', fontsize=12)
@@ -84,8 +87,8 @@ def plotar_memorias(memoriag, memoriab, total_moedas):
     
     paleta = [sns.color_palette("pastel")[0], sns.color_palette("pastel")[4]]
     
-    barra1 = ax.bar(x - largura/2, memoriag, largura, label='Algoritmo Guloso', color=paleta[0])
-    barra2 = ax.bar(x + largura/2, memoriab, largura, label='Backtracking', color=paleta[1])
+    barra1 = ax.bar(x - largura/2, memoriag, largura, label='Algoritmo Guloso', color='black')
+    barra2 = ax.bar(x + largura/2, memoriab, largura, label='Backtracking', color=paleta[0])
     
     ax.set_ylabel('Memória (KB)')
     ax.set_title(f'Uso de memória por algoritmo (Quantidade {total_moedas})')
